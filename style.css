@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    --mobile-size: 375px;
+    --desktop-size: 1440px;
+    --darkCyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --font-size: 14px;
+    --font-family-montserrat: 'Montserrat', sans-serif;
+    --font-family-fraunces: 'Fraunces', serif;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-size: var(--font-size);
+    font-family: var(--font-family-montserrat);
+    font-weight: 500;
+    user-select: none;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    background-color: var(--cream);
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background-color: var(--white);
+    border-radius: 1rem;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+.container img {
+    width: 355px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.container img.desktop {
+    aspect-ratio: 2/3;
+    border-radius: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.container .desc {
+    width: 355px;
+    padding: 1rem 2.25rem;
+}
+
+.container .desc .category {
+    letter-spacing: 3px;
+    color: var(--darkGrayishBlue);
+    font-size: 12px;
+}
+
+
+.container .desc h1 {
+    margin-top: 1rem;
+    font-family: var(--font-family-fraunces);
+    font-weight: 700;
+    font-size: 2.375rem;
+}
+
+.container .desc p {
+    margin-top: 1rem;
+    color: var(--darkGrayishBlue);
+}
+
+.container .desc .prices {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.container .desc .prices .new {
+    font-family: var(--font-family-fraunces);
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--darkCyan);
+}
+
+.container .desc .prices .old {
+    color: var(--darkGrayishBlue);
+    text-decoration: line-through;
+}
+
+.container .desc button {
+    border: none;
+    width: 100%;
+    background-color: var(--darkCyan);
+    padding: .75rem 0;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.container .desc button:is(:active, :hover) {
+    background-color: var(--veryDarkBlue);
+}
+
+.container .desc button img {
+    width: 16px;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 1.5rem;
+    font-size: 11px;
+    color: var(--veryDarkBlue);
+    text-align: center;
+    display: none;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .attribution {
+        display: none;
+    }
+}
